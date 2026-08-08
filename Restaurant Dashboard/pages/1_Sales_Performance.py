@@ -20,7 +20,10 @@ st.markdown("### Sales Analysis Dashboard")
 # ==========================
 # Read Data
 # ==========================
-df = pd.read_csv("restaurant_sales_cleaned.csv")
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+df = pd.read_csv(os.path.join(BASE_DIR, "restaurant_sales_cleaned.csv"))
 
 df["Order Date"] = pd.to_datetime(df["Order Date"])
 
